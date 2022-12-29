@@ -1,0 +1,23 @@
+#include<stdio.h>
+int check_sys()
+{
+	int a=1;
+	char* p=(char*)&a;
+	return *p;
+	//return *(char*)&a;
+}
+int main()
+{
+	//返回1是小端
+	//返回0是大端
+	int ret=check_sys();
+	if(ret==1)
+	{
+		printf("小端\n");
+	}
+	else
+	{
+		printf("大端\n");
+	}
+	return 0;
+}
