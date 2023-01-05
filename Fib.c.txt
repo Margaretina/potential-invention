@@ -1,0 +1,24 @@
+#include<stdio.h>
+int Fib(int n)
+{
+	int a=1;
+	int b=1;
+	int c=1;
+	while(n>2)
+	{
+		c=a+b;
+		a=b;
+		b=c;
+		n--;
+	}
+	return c;
+
+}
+int main()
+{
+	int n=0;
+	printf("输入斐波那契数列的项数:>");
+	scanf("%d",&n);
+	printf("%d\n",Fib(n));
+	return 0;
+}
