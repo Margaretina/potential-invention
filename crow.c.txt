@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main()
+{
+	int a[3][4]={0};
+	printf("%d\n",sizeof(a[0]));//a[0]数组第一行的数组名
+	printf("%d\n",sizeof(a[3]));//数组没有第四行，但计算出结果并不需要访问，所以和a[0]的结果一样，答案是16
+	return 0;
+}
