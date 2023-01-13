@@ -1,0 +1,33 @@
+void reverse(char* str)
+{
+	
+	int len=strlen(str);
+	char *left=str;
+	char *right=str+len-1;
+	assert(str !=NULL);
+	while(left<right)
+	{
+		char tmp=*left;
+	    *left=*right;
+	    *right=tmp;
+		left++;
+		right--;
+	}
+
+	
+
+
+	
+}
+
+int main()
+{
+	char arr[10]={0};
+	//scanf("%s",arr);//abcdef 关注空格
+	gets(arr);//不关注空格,可以逆序hello bit
+	//逆序函数
+	reverse(arr);
+	printf("%s\n",arr);
+	return 0;
+	
+}
