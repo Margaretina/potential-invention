@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<assert.h>
+#include<string.h>
+int my_strcmp(const char* str1,const char* str2)
+{
+	assert(str1 && str2);
+	while(*str1==*str2)
+	{
+		if(*str1=='\0')
+			return 0;
+		str1++;
+		str2++;
+	}
+	return (*str1-*str2);
+
+
+
+}
+int main()
+{
+	char* p1="abc";//6
+	char* p2="abcde";//5
+	
+	int ret=my_strcmp(p1,p2);
+	if(ret>0)
+		printf("p1>p2\n");
+	else if(ret==0)
+		printf("p1=p2\n");
+	else if(ret<0)
+		printf("p1<p2\n");
+	return 0;
+	//if("abcdef"=="aquer") 当一个常量字符串作为表达式存在的时候产生的值是字符串首字符的地址，比较方式错误
+	//strcmp用来比较两个字符串是否相等，大于小于等于
+	//strcmp(p1,p2),如果p1>p2返回大于零的数字，如果p1<p2返回小于零的数字，p1=p2返回等于零的数字
+	//比较的是字符
+	//a<s，即a所在的字符串小于s所在的字符串
+	//若第一个相等则比较第二个，比较ASIIC码值
+}
