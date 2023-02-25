@@ -1,0 +1,27 @@
+#include<stdio.h>
+void move(char x,char y)
+{
+	printf("%c->%c\n",x,y);
+}
+
+void hanoi(int n,char a,char b,char c)
+{
+	if(n==1)
+	{
+		move(a,c);
+	}
+	else
+	{
+		hanoi(n-1,a,c,b);//把A上n-1个盘子借助C放到B上
+		move(a,c);//把A上最后一个放到C上
+		hanoi(n-1,b,a,c);//把B上的n-1个盘子借助A放到C上
+	}
+}
+
+int main()
+{
+	int n=0;
+	scanf("%d",&n);
+	hanoi(n,'A','B','C');
+	return 0;
+}
