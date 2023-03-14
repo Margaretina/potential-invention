@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct Stu
+{
+	char name[20];
+	int age;
+};
+int cmp_stu_by_age(const void* e1,const void* e2)
+{
+	return ((struct Stu*)e1)->age-((struct Stu*)e2)->age;
+}
+int cmp_stu_by_name(const void* e1,const void*e2)
+{
+	return strcmp(((struct Stu*)e1)->name,((struct Stu*)e2)->name);
+}
+void test1()
+{
+	float arr[10]={9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0,0};
+	int sz=sizeof(arr)/sizeof(arr[0]);
+	int i=0;
+	qsort(arr,sz,sizeof(arr[0]),cmp_stu_by_age);
+	for(i=0;i<sz;i++)
+	{
+		printf("%f ",arr[i]);
+	}
+}
+int main()
+{
+	test1();
+}
