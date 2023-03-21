@@ -1,0 +1,30 @@
+#include<string.h>
+#include<stdio.h>
+int main()
+{
+	int a=0,b=0,c=0,d=0;
+	char end[]="End of file";
+	int k=0;
+	char s[100]={0};
+	while((k=scanf("%d.%d.%d.%d",&a,&b,&c,&d))!=EOF)
+	{
+		gets(s);
+		if(strcmp(s,end)==0)
+		{
+			return 0;//判断是否结束
+		}
+		else if(s[0]!='\0')
+		{
+			printf("N\n");
+			continue;
+		}
+		if(k==4 && a>=0 && a<=255 && b>=0 && b<=255 && c>=0 && c<=255 && d>=0 && d<=255)
+		{
+			printf("Y\n");
+		}
+		else
+			printf("N\n");
+		fflush(stdin);//清除缓冲区
+	}
+	return 0;
+}
